@@ -1,0 +1,37 @@
+CSS (Cascading style sheets)
+层叠样式表
+
+语法规则
+
+h1{color:red; font-size:14px;}
+
+h1 ：选择器
+color:red; ：声明
+color ：属性
+red ：值
+
+与html不同，声明不用=而是:
+属性值一般不加引号
+属性值为数值型数据时，一般有单位，单位一般是px
+
+
+
+
+
+CSS书写方式
+    嵌入式
+        通过<style>标签嵌入
+        <style type="text/css">
+            选择器{属性:值;属性:值;}
+        </style>
+        HTML5可以不写type属性
+        <style>可以放在任何位置，但一般放在head
+    外链式
+    行内式
+
+
+
+
+注释
+/* */
+VSCode可以用Ctrl+/
