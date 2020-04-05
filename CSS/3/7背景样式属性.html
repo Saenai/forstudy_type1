@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景样式属性</title>
+    <style>
+        .box{
+            width: 256px;
+            height: 256px;
+            background-color: crimson;
+            border: 1px solid #000;
+            margin-right: auto;
+            margin-left: auto;
+            background-position: right bottom;
+        }
+
+        body{
+            background-image: url(https://files.yande.re/sample/b98dcf7fd9ebd7a33eb027ecf9ba4fe4/yande.re%20623989%20sample%20nijisanji%20pantyhose%20sak%20suzuhara_ruru.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <h2>background-color</h2>
+            <p>[color]</p>
+        </li>
+        <li>
+            <h2>background-image</h2>
+            <p>[url]</p>
+        </li>
+        <li>
+            <h2>background-repeat</h2>
+            <p>背景是否平铺（默认平铺）</p>
+            <p>repeat, repeat-x（水平）, repeat-y（垂直）, no-repeat</p>
+        </li>
+        <li>
+            <h2>background-position</h2>
+            <p>图像起始位置</p>
+            <p>center,x% y%,xpos ypos</p>
+            <p>xpos: #px, left, right; yops: #px, top, bottom</p>
+        </li>
+        <li>
+            <h2>background-attachment</h2>
+            <p>设置背景是否随页面滚动（默认滚动）</p>
+            <p>scroll, fixed</p>
+        </li>
+        <li>
+            <h2>background</h2>
+            <p>简写</p>
+            <p>url(x.jpg) no-repeat center center fixed</p>
+        </li>
+    </ul>
+
+    <div class="box"></div>
+</body>
+</html>

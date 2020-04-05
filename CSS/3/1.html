@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style text="text/css";>
+        [align="center"]{
+            color: #B4D2C8;
+        }
+        p[align]{
+            color: #CB1B45;
+        }
+        h2[align="left"]{
+            color: #465DAA;
+        }
+        [align^="ri"]{
+            color: #AFDFE4;
+        }
+        p[align$="ht"]{
+            color: #AFDFE4;
+        }
+        .sp[align*="ef"]{
+            color:darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>属性选择器通过标签的属性名和属性值匹配元素</h2>
+    attr=attribute; val=value;
+    <ul>
+        <li>
+            <h2 align="center">[attr]</h2>
+            <p align="center">匹配具有[attr]的，不考虑值，适用于符合选择器</p>
+        </li>
+        <li>
+            <h2 align="left">[attr = "val"]</h2>
+            <p>匹配具有[attr = "val"]</p>
+        </li>
+        <li>
+            <h2 align="right">[attr^="val"]</h2>
+            <p align="right">匹配具有[attr]且以val开头的所有属性</p>
+        </li>
+        <li>
+            <h2 align="right">[attr$="val"]</h2>
+            <p align="right">匹配具有[attr]且以val结尾的所有属性</p>
+        </li>
+        <li>
+            <h2>[attr*="val"]</h2>
+            <p class="sp" align="left">匹配具有[attr]的，值包含val的所有元素</p>
+            <p align="left">匹配具有[attr]的，值包含val的所有元素</p>
+        </li>
+    </ul>
+</body>
+</html>
