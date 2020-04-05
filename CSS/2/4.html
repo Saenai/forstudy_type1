@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>符合选择器</title>
+    <style type="text/css">
+        p span{
+            color:#f00;
+        }
+    </style>
+</head>
+<body>
+    <h2>selector1,selector2{detail:value}</h2>
+        <p>多个<span>选择器</span>公用</p>
+    E F{detail:value}
+        <p>后代元素选择器，匹配所有属于E元素后代的F元素，用空格分隔</p>
+    E > F{detail:value}
+        子元素选择器，类似于后代元素，但只匹配下一级的元素。
+    E + F{detail:value}
+        相邻选择器，匹配所有E #之后# #紧接# 着的 #同级# 的F
+</body>
+</html>

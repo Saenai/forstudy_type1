@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style type="text/css">
+        a:link {
+            color: #FEEEED;
+        }
+
+        a:visited {
+            color: #000000;
+        }
+
+        a:hover {
+            color: aqua;
+        }
+
+        a:active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>伪类选择器用于超链接不同状态的样式设置。伪类前不加空格，并且受顺序影响，应当按照顺序</h2>
+    <a href="http://www.suzuya.life">Suzuya.life</a>
+    <ol>
+        <li>
+            <h2>:link</h2>
+            <p>未访问链接样式</p>
+        </li>
+        <li>
+            <h2>:visited</h2>
+            <p>访问链接样式</p>
+        </li>
+        <li>
+            <h2>:hover</h2>
+            <p>悬浮时链接样式。事实上也会用于全局</p>
+        </li>
+        <li>
+            <h2>:active</h2>
+            <p>点击时链接样式。事实上也会用于全局</p>
+        </li>
+    </ol>
+</body>
+
+</html>
