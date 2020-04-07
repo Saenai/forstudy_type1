@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本阴影</title>
+    <style>
+        p {
+            font-size: 18px;
+        }
+
+        .textp1 {
+            color: chartreuse;
+            text-shadow: 4px 4px 4px cyan;
+        }
+
+        .textp2 {
+            color: chartreuse;
+            text-shadow: 4px 4px 4px cyan, -4px -4px -4px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p class="textp1">文字阴影A</p>
+        <p class="textp2">文字阴影B</p>
+        <p class="textp3">文字阴影C</p>
+    </div>
+    <br>
+    <br>
+    text-shadow: 水平阴影 垂直阴影 模糊距离 阴影颜色
+    多组阴影已经失效
+</body>
+
+</html>

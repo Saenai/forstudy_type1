@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素</title>
+    <style>
+        .box::before{
+            content: "先行插入";
+        }
+        .box::after{
+            content: "末端插入";
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    :first-letter<br>
+        操作当前元素中的第一个字<br>
+    :first-line<br>
+        操作当前元素中的第一行<br>
+    ::before<br>
+        插入内容，在盒子内容最前<br>
+    ::after<br>
+        插入内容，在盒子内容最后<br>
+    </div>
+</body>
+</html>

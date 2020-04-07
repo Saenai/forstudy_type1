@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子阴影</title>
+    <style>
+        body{
+            padding:64px;
+        }
+        .box1{
+            width: 128px;
+            height: 128px;
+            background-color: chartreuse;
+            box-shadow:10px 10px 5px 5px  azure inset;
+        }
+        
+        .box2{
+            margin:64px 0px 0px 0px;
+            width: 128px;
+            height: 128px;
+            background-color:lime;
+            box-shadow:10px 10px 5px 5px  red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    box-shadow: h-shadow v-shadow blur spread color inset;
+    <ul>
+        <li class="listitem">h-shadow
+            <p>必须，水平阴影位置</p></li>
+        <li class="listitem">v-shadow
+            <p>必须，垂直阴影位置</p></li>
+        <li class="listitem">blur
+            <p>模糊距离</p></li>
+        <li class="listitem">spread
+            <p>阴影尺寸</p></li>
+        <li class="listitem">color
+            <p>颜色</p></li>
+        <li class="listitem">inset
+            <p>默认外阴影outset改为内阴影</p></li>
+    </ul>
+</body>
+</html>
