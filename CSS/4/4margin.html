@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin</title>
+</head>
+<body>
+    值的操作同padding；
+
+    塌陷现象
+        垂直方向的margin不会叠加，相邻取较大值；
+        水平、浮动没有此现象。
+
+    水平居中
+        margin-left:auto; margin-right:auto;
+        auto指向极限大小。
+        只适用于有固定宽/高，否则会填充没有宽/高的部分。
+        只适用于块元素。
+        只适用于标准文档流，即浮动元素不可用。
+        text-align是用于实现文本对齐，[val]center。
+
+    优化策略
+        优先父元素padding后子元素margin；
+        margin属性用于同级元素之间的关系，涉及父元素时用padding。
+</body>
+</html>
