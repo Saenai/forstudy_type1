@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag</title>
+    <style>
+        #div1 {
+            width: 512px;
+            height: 512px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag1" src="./file/image.jpg" alt="" draggable="true" ondragstart="drag(event)">
+    
+    <div class="box">
+        <ul>
+            <li>
+                <h2>draggable:true, false</h2>
+                <p>可拖动</p>
+            </li>
+            <li>
+                <h2>ondragstart=[function] & setData()</h2>
+                <p>拖动什么</p>
+            </li>
+            <li>
+                <h2>ondragover</h2>
+                <p>放到何处</p>
+            </li>
+            <li>
+                <h2>ondrop</h2>
+                <p>进行放置</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

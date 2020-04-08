@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+    <script>
+        var ta;
+        var btn;
+        window.onload = function () {
+            ta = document.getElementById("ta");
+            if (localStorage.text) {
+                ta.value = localStorage.text;
+            }
+            btn = document.getElementById("btn");
+            btn.onclick = function () {
+                alert(ta.value);
+                localStorage.text = ta.value;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <textarea name="" id="ta" cols="30" rows="10"></textarea>
+    <button id="btn">save</button>
+
+
+    <p>sessionStorage类似于localStorage，只针对当前会话</p>
+</body>
+
+</html>

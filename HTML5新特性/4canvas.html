@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas1" width="256px" height="256px"></canvas>
+
+    <script>
+        var c= document.getElementById("canvas1");
+        var cxt=c.getContext("2d");
+        cxt.fillStyle="#B4D2C8"
+        // // cxt.fillRect(0,0,100,100);//画矩形
+        // cxt.beginPath();
+        // cxt.arc(70,18,15,0,Math.PI*2,true);//画⚪
+        // cxt.closePath();//关闭路径
+        // cxt.fill();//渲染
+
+        // 绘制图片
+        var img=new Image();
+        img.onload=function(){
+            cxt.drawImage(img,0,0);
+        }
+        img.src="file/image.jpg";
+        // cxt.drawImage(img,0,0)
+        //这种绘制方法显示不出是因为等待加载完成之前便渲染
+    </script>
+
+
+
+    <ul>
+        <li>
+            <h3>画布</h3>
+            <p>画布是一个矩形区域，可以控制其每一像素。</p>
+            <p>canvas有多种绘制路径、图形等的方法</p>
+        </li>
+        <li>
+            <h3></h3>
+            <p></p>
+        </li>
+    </ul>
+</body>
+
+</html>
