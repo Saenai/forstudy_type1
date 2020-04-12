@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        body{
+            background: url("../../HTML5新特性/file/image.jpg") ;
+            background-size: 50px 80px;
+            background-repeat: no-repeat;
+            padding-top: 128px;
+        }
+
+        div{
+            border: 2px solid lime;
+            padding: 35px;
+            background-image: url("../../HTML5新特性/file/image.jpg");
+            background-repeat: no-repeat;
+            background-position: left;
+            margin: 64px 0px;
+            color:springgreen;
+        }
+        .div1{
+            background-origin: border-box;
+        }
+        .div2{
+            background-origin: content-box;
+        }
+
+    </style>
+</head>
+<body>
+    background-size;
+    background-origin;
+    <p>↑缩小的图片</p>
+    <p>↓原始</p>
+    <img src="../../HTML5新特性/file/image.jpg" alt="lulu">
+    <br>
+    <p>border-box;</p>
+    <div class="div1">
+        いろはにほへとちりぬるを
+        流れてる時の中
+        夢ならば、どれ程良かったでしょう
+    </div>
+    <p>content-box</p>
+    <div class="div2">
+        届かない恋をしてでも　映す日が来るかな
+        さよならはあなたが言った　それなのに
+        どうする、何する
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        body{
+            padding: 100px;
+        }
+
+        div{
+            width: 256px;
+            height: 196px;
+            background-color: seagreen;
+            transition: width 2s,height 2s,background-color 2s, transform 2s, font-size 2s;
+        }
+
+        div:hover{
+            width:400px;
+            height: 300px;
+            background-color: crimson;
+            transform: rotate(30deg);
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        换行变化换行变化换行变化换行变化换行变化换行变化换行变化
+    </div>
+</body>
+</html>

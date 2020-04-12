@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D效果</title>
+    <style>
+        .div1 {
+            width: 128px;
+            height: 64px;
+            margin: 32px;
+            background-color: lime;
+
+            /* transform: rotate(30deg); */
+            /* transform: translate(100px,100px); */
+            /* transform: skew(30deg,20deg); */
+            transform: matrix();
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2D转换</h1>
+    <p>Chrome&Safari 前缀 -webkit-</p>
+    <p>IE9 前缀 -ms-</p>
+    none - 不进行转换，常用作覆盖别的值使用<br>
+    translate(x,y) - 2d位移；translate3d(x,y,z) - 3d位移； transformX/Y/Z(n) - 单向位移<br>
+    scale(x,y) - 2d缩放； scale3d(x,y,z) - 3d缩放； scaleX/Y(n) - 单向缩放<br>
+    rotate(angle) - 2d旋转； rotate3d(x,y,z,angle) - 3d旋转；rotateX/Y/Z(angle) - 单向旋转<br>
+    skew(x-angle,y-angle) - 倾斜变换； skewX/Y(angle) - 单向倾斜变换<br>
+    matrix[3d] - 矩阵<br>
+    perspective(n) - 视距（值）<br>
+
+    同时只能生效一条<br>
+    <div class="div1">
+        2D效果
+    </div>
+
+    transform前置属性<br>
+    transform-origin - 变换原点<br>
+    transform-style - 变换类型<br>
+    perspective - 3d透视视图的视距（属性）<br>
+    perspective-origin - 视距的基点<br>
+    backface-visibility - 是否可以看见舞台背面<br>
+
+</body>
+
+</html>

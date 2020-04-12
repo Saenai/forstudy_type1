@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        @keyframes testAnimation {
+            from {
+                background-color: crimson;
+            }
+
+            to {
+                background-color: springgreen;
+            }
+        }
+        @keyframes percentAnimation {
+            0% {
+                background-color: crimson;
+                left: 0px;
+                top:0px;
+            }
+
+            50%{
+                background-color:navy;
+                left: 100px;
+                top:100px;
+            }
+
+            100% {
+                background-color: springgreen;
+                left: 200px;
+                top: 200px;
+            }
+        }
+
+        div {
+            width: 128px;
+            height: 128px;
+            background-color: crimson;
+            position: relative;
+        }
+
+        .div1{
+            animation: testAnimation 3s;
+        }
+        .div2{
+            animation: percentAnimation 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+
+    </div>
+    <div class="div2">
+
+    </div>
+</body>
+
+</html>
