@@ -1,0 +1,52 @@
+为了改变这一点，他决定重新设定一个密码。于是他随机生成了一个很长很长的字符串，并打算选择一个子串作为新密码。他认为安全的密码长度至少为 m，那么他有多少种不同选择方式呢？两种方案不同，当且仅当选出的密码内容不同。
+
+#include <bits/stdc++.h>
+#define mp make_pair
+typedef long long ll;
+using namespace std;
+const int N = 1e5 + 5;
+int sa[N], rak[N], tp[N], tax[N], m, n, height[N], x;
+char s[N];
+void qsort()
+{
+    for(int i=0;i<=m;i++) tax[i] = 0;
+    for(int i=1;i<=n;i++) tax[rak[i]]++;
+    for(int i=1;i<=m;i++) tax[i] += tax[i-1];
+    for(int i=n;i>=1;i--) sa[tax[rak[tp[i]]]--] = tp[i];
+}
+void get_sa()
+{
+    m = 30;
+    for(int i=1;i<=n;i++) rak[i] = s[i] - 'a' + 1, tp[i] = i;
+    qsort();
+    for(int w=1,p=0;p<n;m=p,w<<=1)
+    {
+        p = 0;
+        for(int i=1;i<=w;i++) tp[++p] = n - w + i;
+        for(int i=1;i<=n;i++) if(sa[i]>w) tp[++p] = sa[i] - w;
+        qsort();
+        swap(tp,rak);
+        rak[sa[1]] = p = 1;
+        for(int i=2;i<=n;i++) rak[sa[i]] = (tp[sa[i-1]]==tp[sa[i]]&&tp[sa[i-1]+w]==tp[sa[i]+w])? p : ++p;
+    }
+}
+ll solve()
+{
+    ll ans = 0;
+    for(int i=1;i<=n;i++)
+    {
+        if(height[i]) height[i] = max(0,height[i]-x+1);
+        ans += max(0,n-sa[i]-height[i]+2-x);
+    }
+    return ans;
+}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cin >> n >> x >> s+1;
+    get_sa();
+    get_h();
+    cout << solve() << endl;
+    return 0;
+}
