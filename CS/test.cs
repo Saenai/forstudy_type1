@@ -1,5 +1,5 @@
 using System;
-namespace 委托本质
+namespace deltest
 {
     class test
     {

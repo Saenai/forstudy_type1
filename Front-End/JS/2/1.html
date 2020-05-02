@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+</body>
+<script>
+    //4種聲明對象的方式
+    //1
+    var obj1 = {};
+    //2
+    var obj2 = {
+        age: 12,
+        sg: 190,
+        name: 'xx',
+        fun: function () {
+            console.log(3);
+        }
+    };
+    //3
+    var obj3 = new Object();
+    
+    //4
+    function Fun() {
+
+    }
+    var f = new Fun();
+
+    for(var k in o1){
+        console.log(o1[k]);
+    }
+
+</script>
+
+</html>

@@ -9,179 +9,70 @@ typedef long long ll;
 #include <iostream>
 #include <algorithm>
 #include <cstring>
-#include <fstream>
 #include <vector>
 #include <cctype>
 #include <string>
+#include <iomanip>
 using namespace std;
 
-fstream OUT;
-
-struct dict
+template <typename x>
+x jc(x a[], int size)
 {
-    string name;
-    string type;
-};
-
-dict reserved[14] = {
-    {"begin", "beginsym"},
-    {"call", "callsym"},
-    {"const", "constsym"},
-    {"do", "dosym"},
-    {"end", "endsym"},
-    {"if", "ifsym"},
-    {"odd", "oddsym"},
-    {"procedure", "proceduresym"},
-    {"read", "readsym"},
-    {"then", "thensym"},
-    {"var", "varsym"},
-    {"while", "whilesym"},
-    {"write", "writesym"},
-    {"else", "elsesym"}};
-
-dict kigou[16]{
-    {"+", "plus"},
-    {"-", "minus"},
-    {"*", "times"},
-    {"/", "slash"},
-    {"=", "eql"},
-    {"#", "neq"},
-    {"<", "lss"},
-    {"<=", "leq"},
-    {">", "gtr"},
-    {">=", "geq"},
-    {":=", "becomes"},
-    {"(", "lparen"},
-    {")", "rparen"},
-    {",", "comma"},
-    {";", "semicolon"},
-    {".", "period"}};
-
-int Skbt(char &v)
-{
-    //字母
-    if (v >= 'a' && v <= 'z')
+    int i;
+    x max = a[1];
+    _f(i, 0, size - 1)
     {
-        return 1;
+        if (max < a[i])
+            max = a[i];
     }
-    //数字
-    else if (v >= '0' && v <= '9')
+    x min = a[1];
+    _f(i, 0, size - 1)
     {
-        return 2;
+        if (min > a[i])
+            min = a[i];
     }
-    //空格
-    else if (v == ' ')
-        return -1;
-    //符号
-    else
-        return 3;
+    return max - min;
 }
-string def(string v)
+float fc(float *arr, int size)
 {
-    int i = 0;
-    //number
-    if (Skbt(v[0]) == 2)
+    int i;
+    float avg = 0, sum = 0;
+    _f(i, 0, size - 1)
     {
-        _f(i, 0, v.size() - 1)
-        {
-            if (Skbt(v[i]) != 2)
-                return "";
-        }
-        return "number";
+        avg += arr[i];
     }
-    //保留字
-    i = 0;
-    _f(i, 0, 13)
+    avg=avg/size;
+    _f(i, 0, size - 1)
     {
-        if (v == reserved[i].name)
-            return reserved[i].type;
+        sum += (arr[i] - avg) * (arr[i] - avg);
     }
-    //符号
-    i = 0;
-    _f(i, 0, 15)
-    {
-        if (v == kigou[i].name)
-            return kigou[i].type;
-    }
-
-    return "ident";
-}
-
-int output(string v)
-{
-    _c("        opt", v);
-    _c("        def", def(v));
-
-    if (v == "" || def(v) == "")
-        return -1;
-    else
-    {
-        OUT << '(' << def(v) << ',' << v << ')' << '\n';
-    }
-    return -9;
+    return sum/size;
 }
 
 int main(int argc, char *argv[])
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    fstream IN;
-    IN.open("input.txt");
-    OUT.open("output.txt");
-    string s, word, temp;
-    while (getline(IN, s))
+
+    int i = 0, j = 0;
+    int T, n[100];
+    float np[100][1000];
+
+    cin >> T;
+    _f(i, 0, T - 1)
     {
-        s.erase(0, s.find_first_not_of(" "));
-        s.erase(s.find_last_not_of(" ") + 1);
-        word = "";
-        _c("line", s);
-        int i = 0, flag = 0;
-        while (s[i] != 0)
+        cin >> n[i];
+        _f(j, 0, n[i] - 1)
         {
-            if (s[i] >= 'A' && s[i] <= 'Z')
-                s[i] += 'a' - 'A';
-            _c("    s[i]", s[i]);
-            _c("    i:", i);
-            _c("        word", word);
-            //输入状态
-            switch (Skbt(s[i])) //识别
-            {
-            case 1: //字母
-                word += s[i];
-                break;
-            case 2: //数字
-                word += s[i];
-                break;
-            case -1: //空格
-                flag = 1;
-                break;
-            case 3: //符号
-                if (word == "" || word == "<" || word == ">" || word == ":")
-                {
-                    word += s[i];
-                    if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/' || s[i] == '=' || s[i] == ';' || s[i] == '#' || s[i] == ',' || s[i] == '(' || s[i] == ')')
-                        flag = 1;
-                }
-                else if (Skbt(s[i - 1]) != 3)
-                {
-                    flag = 1;
-                    --i;
-                }
-                break;
-            default:
-                break;
-            }
-            if (s[i] == 0 || s[i + 1] == 0)
-                flag = 1;
-            if (flag == 1) //新词
-            {
-                output(word);
-                word = "";
-                flag = 0;
-            }
-            ++i;
+            cin >> np[i][j];
         }
     }
-    IN.close();
-    OUT.close();
+
+    _f(i, 0, T - 1)
+    {
+        int temp = jc(np[i], n[i]);
+        printf("%d ", temp);
+        printf("%.3lf\n", fc(np[i], n[i]));
+    }
+
     return 0;
 }
