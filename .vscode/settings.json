@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "D:\\Program Files\\Python38\\python.exe"
+    "files.associations": {
+        "xiosbase": "cpp"
+    }
 }
